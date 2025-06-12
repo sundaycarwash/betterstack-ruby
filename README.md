@@ -134,22 +134,6 @@ client.incidents.add_update(incident_id, {
 client.incidents.resolve(incident_id, "Issue has been resolved")
 ```
 
-### Maintenance Windows
-
-```ruby
-# Create maintenance window
-maintenance = client.maintenances.create({
-  name: "Server Upgrade",
-  starts_at: "2024-01-15T02:00:00Z",
-  ends_at: "2024-01-15T04:00:00Z",
-  affected_resources: [monitor_id]
-})
-
-# Start/Complete maintenance
-client.maintenances.start(maintenance_id)
-client.maintenances.complete(maintenance_id)
-```
-
 ## Error Handling
 
 The gem provides specific error classes for different API responses:
