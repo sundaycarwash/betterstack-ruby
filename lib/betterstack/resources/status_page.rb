@@ -21,6 +21,22 @@ module BetterStack
         client.delete(resource_path(id))
       end
 
+      def sections(id, params = {})
+        client.get("#{resource_path(id)}/sections", params)
+      end
+
+      def add_section(id, section_attributes)
+        client.post("#{resource_path(id)}/sections", section_attributes)
+      end
+
+      def update_section(id, section_id, attributes)
+        client.patch("#{resource_path(id)}/sections/#{section_id}", attributes)
+      end
+
+      def remove_section(id, section_id)
+        client.delete("#{resource_path(id)}/sections/#{section_id}")
+      end
+
       def resources(id, params = {})
         client.get("#{resource_path(id)}/resources", params)
       end
